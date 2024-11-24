@@ -62,25 +62,20 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel3" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Component id="jFileChooser1" min="-2" pref="639" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jScrollPane3" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jFileChooser1" min="-2" pref="639" max="-2" attributes="0"/>
+                  <EmptySpace pref="606" max="32767" attributes="0"/>
               </Group>
+              <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
+              <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
+              <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
@@ -88,7 +83,7 @@
                   <Component id="jScrollPane3" min="-2" pref="265" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="jFileChooser1" min="-2" pref="259" max="-2" attributes="0"/>
-                  <EmptySpace pref="44" max="32767" attributes="0"/>
+                  <EmptySpace pref="47" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -323,6 +318,9 @@
           <SubComponents>
             <Component class="javax.swing.JTable" name="tabelMasakan">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="cc" type="rgb"/>
+                </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="4" rowCount="4">
                     <Column editable="true" title="Title 1" type="java.lang.Object"/>
