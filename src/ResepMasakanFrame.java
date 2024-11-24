@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  * @author USER
  */
 public class ResepMasakanFrame extends javax.swing.JFrame {
-    private DefaultTableModel tabelModel;
+    private DefaultTableModel tabelModel; 
     
 
     /**
@@ -27,9 +27,11 @@ public class ResepMasakanFrame extends javax.swing.JFrame {
     public ResepMasakanFrame() {
         initComponents();
         
+        //untuk tabel model dengan kolom
         tabelModel = new DefaultTableModel(new String[]{"Nama Masakan", "Bahan", "Langkah"}, 0);
         tabelMasakan.setModel(tabelModel);
         
+        //menambahkan event untuk button
         btnTambah.addActionListener(evt -> tambahResep());
         btnEdit.addActionListener(evt -> editResep());
         btnHapus.addActionListener(evt -> hapusResep());
@@ -38,6 +40,7 @@ public class ResepMasakanFrame extends javax.swing.JFrame {
         btnKeluar.addActionListener(e -> System.exit(0));
     }
     
+    //metode untuk menambahkan resep baru
     private void tambahResep() {
         String nama = txtNamaMasakan.getText().trim();
         String bahan = txtAreaBahan.getText().trim();
@@ -49,9 +52,10 @@ public class ResepMasakanFrame extends javax.swing.JFrame {
         }
 
         tabelModel.addRow(new Object[]{nama, bahan, langkah});
-        hapusInput();
+        hapusInput();//untuk menghapus/membersihkan inputan
     }
     
+    //metode untuk mengedit resep dengan mengklik baris data pada tabel
     private void editResep() {
         int selectedRow = tabelMasakan.getSelectedRow();
         if (selectedRow != -1) {
@@ -71,6 +75,7 @@ public class ResepMasakanFrame extends javax.swing.JFrame {
         }   
     }
     
+    //metode untuk menghapus resep sesuai tabel yang dipilih
     private void hapusResep() {
         int selectedRow = tabelMasakan.getSelectedRow();
         if (selectedRow != -1) {
@@ -80,14 +85,16 @@ public class ResepMasakanFrame extends javax.swing.JFrame {
         }   
     }
     
+    //metode untuk menghapus inputan
     private void hapusInput() {
         txtNamaMasakan.setText("");
         txtAreaBahan.setText("");
         txtAreaLangkah.setText("");
     }
     
+    //metode untuk mengimpor/mengambil data di dalam file
     private void imporData(){
-        int result = jFileChooser1.showOpenDialog(this);
+        int result = jFileChooser1.showOpenDialog(this); //untuk menampilkan file yang akan dipilih
         if (result == jFileChooser1.APPROVE_OPTION){
             File file = jFileChooser1.getSelectedFile();
             try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -108,8 +115,9 @@ public class ResepMasakanFrame extends javax.swing.JFrame {
         }
     }
     
+    //metode untuk menyimpan data ke dalam file txt
     private void eksporData(){
-        int result = jFileChooser1.showSaveDialog(this);
+        int result = jFileChooser1.showSaveDialog(this); //untuk menampilkan dialog yang disimpan
         if (result == jFileChooser1.APPROVE_OPTION){
             File file = jFileChooser1.getSelectedFile();
             try (FileWriter writer = new FileWriter(file)) {
@@ -120,7 +128,7 @@ public class ResepMasakanFrame extends javax.swing.JFrame {
                     writer.write(System.lineSeparator());
                     writer.write((String) tabelModel.getValueAt(i, 2)); // data langkah
                     writer.write(System.lineSeparator());
-                    writer.write("---");
+                    writer.write("---"); //tanda pemisah antar resep
                     writer.write(System.lineSeparator());
                 }
                 JOptionPane.showMessageDialog(this, "Data Berhasil diekspor!", "Informasi", JOptionPane.INFORMATION_MESSAGE);
